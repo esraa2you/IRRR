@@ -21,7 +21,7 @@ app = Flask(__name__, template_folder='templates')
 # dataset2original = np.load('DOC_corpusDic.npy', allow_pickle='TRUE').item()
 
 DATAAFTERNORMALIZATION = np.load(
-    'StopwordProccess.npy', allow_pickle='TRUE').item()
+    'StemmBeforLemmaProccess.npy', allow_pickle='TRUE').item()
 ORIGINALDATA = np.load('corpusDic.npy', allow_pickle='TRUE').item()
 FINAL = finalDic(DATAAFTERNORMALIZATION)
 DOCUMENT = list(FINAL.values())
@@ -118,7 +118,7 @@ def submit_option():
     if selected_option == "Dataset1":
         global DATAAFTERNORMALIZATION
         DATAAFTERNORMALIZATION = np.load(
-            'StopwordProccess.npy', allow_pickle='TRUE').item()
+            'StemmBeforLemmaProccess.npy', allow_pickle='TRUE').item()
         global ORIGINALDATA
         ORIGINALDATA = np.load('corpusDic.npy', allow_pickle='TRUE').item()
         global FINAL
